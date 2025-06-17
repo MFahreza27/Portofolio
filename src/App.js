@@ -53,49 +53,91 @@ const Portfolio = () => {
 
       case 'tentang':
         return (
-          <section className="min-h-screen flex items-center px-4 py-20">
+          <section className="min-h-screen flex flex-col gap-24 px-4 py-20">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-white to-blue-300 bg-clip-text ">
+              <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-white to-blue-300 bg-clip-text">
                 Tentang Saya
-              </h2> 
-              
+              </h2>
+
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
                   <p className="text-gray-300 text-lg leading-relaxed text-justify">
                     Lulusan Universitas Muhammadiyah Cirebon, jurusan Teknik Informatika. Menguasai dasar-dasar pemrograman, pengembangan web, dan pengelolaan basis data, serta memiliki kemampuan dalam menggunakan berbagai software pengembangan dan memiliki ketelitian, manajemen waktu, serta kemampuan riset yang baik. Saya terampil dalam mengoperasikan Microsoft Office (Word, Excel, dan Power Point). Dan mencari peluang kerja yang memberikan peluang dan pengalaman baru untuk berkembang.
                   </p>
-                  
+
                   <p className="text-gray-300 text-lg leading-relaxed text-justify">
                     Keahlian dalam pengembangan web saya yang mencakup fullstack developer adalah :
                   </p>
-         
+
                   <div className="flex flex-wrap gap-3 mt-8">
-                    {['PHP', 'Laravel', 'Mysql', 'PostgreSQL','Html' ,'CSS', 'JS'].map((skill) => (
-                      <span key={skill} className="px-4 py-2 bg-blue-900/30 text-blue-300 rounded-full text-sm border border-blue-700/50 hover:bg-blue-800/40 transition-colors">
+                    {['PHP', 'Laravel', 'Mysql', 'PostgreSQL', 'Html', 'CSS', 'JS'].map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-4 py-2 bg-blue-900/30 text-blue-300 rounded-full text-sm border border-blue-700/50 hover:bg-blue-800/40 transition-colors"
+                      >
                         {skill}
                       </span>
                     ))}
                   </div>
-                  <div className="flex flex-wrap gap-3 mt-8">
-                    <button className="flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors">
-                      <Linkedin className="w-4 h-4" />
-                        Linkedin
-                      </button>
-                    <button className="flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors">
-                      <Github className="w-4 h-4" />
-                        Github
-                    </button>
-                    <button className="flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors">
-                      <Instagram className="w-4 h-4" />
-                        Instagram
-                    </button>
-                  </div>
-                </div>                
+                </div>
                 <div className="relative">
                   <div className="w-80 h-80 mx-auto rounded-2xl bg-gradient-to-br from-blue-900/50 to-blue-700/30 flex items-center justify-center backdrop-blur-sm border border-blue-700/30 shadow-2xl">
                     <User className="w-32 h-32 text-blue-200" />
                   </div>
                   <div className="absolute inset-0 rounded-2xl bg-blue-500 opacity-10 blur-3xl"></div>
+                </div>
+              </div>
+              <div className="grid md:grid-cols-2 gap-16 mt-24 text-white">
+                {/* Education */}
+                <div>
+                  <h3 className="text-3xl font-bold text-blue-300 mb-8 text-center md:text-left">Pendidikan</h3>
+                  <div className="space-y-12">
+                    {/* SMA */}
+                    <div className="flex gap-6">
+                      <div className="relative">
+                        <div className="pl-4 border-l-2 border-blue-700 text-gray-400">
+                          <div>2017 - 2020</div>
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-2xl font-semibold">SMA</h4>
+                        <p className="text-blue-300">SMA Negeri X</p>
+                        <p className="text-gray-400">Mempelajari dasar ilmu komputer dan matematika.</p>
+                      </div>
+                    </div>
+                    {/* Universitas */}
+                    <div className="flex gap-6">
+                      <div className="relative">
+                        <div className="pl-4 border-l-2 border-blue-700 text-gray-400">
+                          <div>2020 - 2025</div>
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-2xl font-semibold">Universitas</h4>
+                        <p className="text-blue-300">Universitas Muhammadiyah Cirebon</p>
+                        <p className="text-gray-400">Fokus pada Teknik Informatika dan pengembangan web.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* Experience */}
+                <div>
+                  <h3 className="text-3xl font-bold text-blue-300 mb-8 text-center md:text-left">Pengalaman</h3>
+                  <div className="space-y-12">
+                    {/* Magang */}
+                    <div className="flex gap-6">
+                      <div className="relative">
+                        <div className="pl-4 border-l-2 border-blue-700 text-gray-400">
+                          <div>2023</div>
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-2xl font-semibold">Magang</h4>
+                        <p className="text-blue-300">Dinas Kearsipan & Perpustakaan</p>
+                        <p className="text-gray-400">Digitalisasi arsip dan pengelolaan database perpustakaan.</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
