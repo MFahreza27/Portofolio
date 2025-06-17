@@ -97,26 +97,7 @@ const Portfolio = () => {
               Pendidikan
             </h3>
             
-            <div className="space-y-8">
-              {/* SMA */}
-              <div className="relative">
-                <div className="flex gap-6">
-                  <div className="flex-shrink-0 w-20 sm:w-24">
-                    <div className="text-sm sm:text-base text-gray-400 font-medium">
-                      2017 - 2020
-                    </div>
-                  </div>
-                  <div className="flex-1 border-l-2 border-blue-700/50 pl-6">
-                    <h4 className="text-lg sm:text-xl font-semibold text-white mb-1">
-                      SMA Negeri 1 Plumbon
-                    </h4>
-                    <p className="text-blue-300 text-sm sm:text-base">
-                      MIPA
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
+            <div className="space-y-8">     
               {/* Universitas */}
               <div className="relative">
                 <div className="flex gap-6">
@@ -131,6 +112,25 @@ const Portfolio = () => {
                     </h4>
                     <p className="text-blue-300 text-sm sm:text-base">
                       S1 Teknik Informatika
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* SMA */}
+              <div className="relative">
+                <div className="flex gap-6">
+                  <div className="flex-shrink-0 w-20 sm:w-24">
+                    <div className="text-sm sm:text-base text-gray-400 font-medium">
+                      2017 - 2020
+                    </div>
+                  </div>
+                  <div className="flex-1 border-l-2 border-blue-700/50 pl-6">
+                    <h4 className="text-lg sm:text-xl font-semibold text-white mb-1">
+                      SMA Negeri 1 Plumbon
+                    </h4>
+                    <p className="text-blue-300 text-sm sm:text-base">
+                      MIPA
                     </p>
                   </div>
                 </div>
@@ -206,10 +206,6 @@ const Portfolio = () => {
                           <Github className="w-4 h-4" />
                           GitHub
                         </button>
-                        <button className="flex items-center gap-2 px-4 py-2 border border-blue-700 text-blue-300 rounded-lg hover:bg-blue-900/30 transition-colors">
-                          <ExternalLink className="w-4 h-4" />
-                          Live Demo
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -240,10 +236,6 @@ const Portfolio = () => {
                           <Github className="w-4 h-4" />
                           GitHub
                         </button>
-                        <button className="flex items-center gap-2 px-4 py-2 border border-blue-700 text-blue-300 rounded-lg hover:bg-blue-900/30 transition-colors">
-                          <ExternalLink className="w-4 h-4" />
-                          Live Demo
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -273,10 +265,6 @@ const Portfolio = () => {
                         <button className="flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors">
                           <Github className="w-4 h-4" />
                           GitHub
-                        </button>
-                        <button className="flex items-center gap-2 px-4 py-2 border border-blue-700 text-blue-300 rounded-lg hover:bg-blue-900/30 transition-colors">
-                          <ExternalLink className="w-4 h-4" />
-                          Live Demo
                         </button>
                       </div>
                     </div>
