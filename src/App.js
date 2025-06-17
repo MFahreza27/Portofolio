@@ -100,9 +100,8 @@ const Portfolio = () => {
                         </div>
                       </div>
                       <div>
-                        <h4 className="text-2xl font-semibold">SMA</h4>
-                        <p className="text-blue-300">SMA Negeri X</p>
-                        <p className="text-gray-400">Mempelajari dasar ilmu komputer dan matematika.</p>
+                        <h4 className="text-2xl font-semibold">SMA Negeri 1 Plumbon</h4>
+                        <p className="text-blue-300">MIPA</p>
                       </div>
                     </div>
                     {/* Universitas */}
@@ -113,9 +112,8 @@ const Portfolio = () => {
                         </div>
                       </div>
                       <div>
-                        <h4 className="text-2xl font-semibold">Universitas</h4>
-                        <p className="text-blue-300">Universitas Muhammadiyah Cirebon</p>
-                        <p className="text-gray-400">Fokus pada Teknik Informatika dan pengembangan web.</p>
+                        <h4 className="text-2xl font-semibold">Universitas Muhammadiyah Cirebon</h4>
+                        <p className="text-blue-300">S1 Teknik Informatika</p>
                       </div>
                     </div>
                   </div>
@@ -132,9 +130,8 @@ const Portfolio = () => {
                         </div>
                       </div>
                       <div>
-                        <h4 className="text-2xl font-semibold">Magang</h4>
-                        <p className="text-blue-300">Dinas Kearsipan & Perpustakaan</p>
-                        <p className="text-gray-400">Digitalisasi arsip dan pengelolaan database perpustakaan.</p>
+                        <h4 className="text-2xl font-semibold">Dinas Kearsipan & Perpustakaan</h4>
+                        <p className="text-blue-300">Magang</p>
                       </div>
                     </div>
                   </div>
