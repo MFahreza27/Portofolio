@@ -63,27 +63,12 @@ const Portfolio = () => {
         </div>
 
         {/* Profile Description */}
-        <div className="max-w-4xl mx-auto mb-16 sm:mb-20">
+        <div className=" mb-16 sm:mb-20">
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/50">
             <div className="space-y-6">
               <p className="text-gray-300 text-base sm:text-lg leading-relaxed text-justify">
                 Lulusan Universitas Muhammadiyah Cirebon, jurusan Teknik Informatika. Menguasai dasar-dasar pemrograman, pengembangan web, dan pengelolaan basis data, serta memiliki kemampuan dalam menggunakan berbagai software pengembangan dan memiliki ketelitian, manajemen waktu, serta kemampuan riset yang baik. Saya terampil dalam mengoperasikan Microsoft Office (Word, Excel, dan Power Point). Dan mencari peluang kerja yang memberikan peluang dan pengalaman baru untuk berkembang.
               </p>
-
-              <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-                Keahlian dalam pengembangan web saya yang mencakup fullstack developer adalah:
-              </p>
-
-              <div className="flex flex-wrap gap-2 sm:gap-3 pt-2">
-                {['PHP', 'Laravel', 'MySQL', 'PostgreSQL', 'HTML', 'CSS', 'JavaScript'].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-4 py-2 bg-blue-900/40 text-blue-300 rounded-lg text-sm font-medium border border-blue-700/50 hover:bg-blue-800/50 transition-all duration-200"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
         </div>
@@ -165,6 +150,41 @@ const Portfolio = () => {
               </div>
             </div>
           </div>
+
+        {/* Skill */}
+        <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/30">
+          <h3 className="text-2xl sm:text-3xl font-bold text-blue-300 mb-8 text-center lg:text-left">
+            Skills
+          </h3>
+
+          {/* Konten dengan garis vertikal langsung di kiri */}
+          <div className="border-l-2 border-blue-700/50 pl-6 space-y-6 text-white text-sm sm:text-base leading-relaxed">
+            <div>
+              <h4 className="font-semibold mb-1">Programming & Web Development</h4>
+              <p className="text-gray-300">PHP, Laravel, HTML/CSS, Javascript</p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-1">Database Management</h4>
+              <p className="text-gray-300">MySQL, PostgreSQL</p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-1">Tools & Office</h4>
+              <p className="text-gray-300">Microsoft Office (Word, Excel, Power Point)</p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-1">Soft Skills</h4>
+              <p className="text-gray-300">Teliti, Kerjasama Tim, Manajemen Waktu, Riset</p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-1">Languages</h4>
+              <p className="text-gray-300">Bahasa Indonesia (native)</p>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
     </section>
