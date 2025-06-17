@@ -361,7 +361,7 @@ const Portfolio = () => {
                       <textarea 
                         rows="4" 
                         className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 resize-none"
-                        placeholder="Ceritakan tentang project Anda..."
+                        placeholder="Komentar"
                       ></textarea>
                     </div>
                     
