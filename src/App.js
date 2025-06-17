@@ -33,15 +33,15 @@ const Portfolio = () => {
                 Full Stack Developer | Ui/Ux Designer
               </p>
             <div className="flex flex-wrap justify-center gap-3 mt-8">
-              <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors flex-1 basis-1/3">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors flex-1 basis-1/3">
                 <Linkedin className="w-4 h-4" />
                 Linkedin
               </a>
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors flex-1 basis-1/3">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors flex-1 basis-1/3">
                 <Github className="w-4 h-4" />
                 Github
               </a>
-              <a href="https://www.instagram.com/yourhandle" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors flex-1 basis-1/3">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors flex-1 basis-1/3">
                 <Instagram className="w-4 h-4" />
                 Instagram
               </a>
