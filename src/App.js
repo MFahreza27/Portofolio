@@ -26,25 +26,25 @@ const Portfolio = () => {
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent">
-                Hello, Im Rin.
+                Hello, Im Rin
               </h1>
               
               <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
                 Full Stack Developer | Ui/Ux Designer
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button 
-                  onClick={() => setActiveSection('project')}
-                  className="px-8 py-4 bg-gradient-to-r from-blue-900 to-blue-700 text-white font-semibold rounded-full hover:from-blue-800 hover:to-blue-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
-                >
-                  Lihat Project
+
+                <div className="flex flex-wrap gap-3 mt-8 justify-self-center">
+                <button className="flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors">
+                  <Linkedin className="w-4 h-4" />
+                  Linkedin
                 </button>
-                <button 
-                  onClick={() => setActiveSection('kontak')}
-                  className="px-8 py-4 border-2 border-blue-700 text-blue-300 font-semibold rounded-full hover:bg-blue-900/30 hover:border-blue-500 transform hover:scale-105 transition-all duration-300"
-                >
-                  Hubungi Saya
+                <button className="flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors">
+                  <Github className="w-4 h-4" />
+                  Github
+                </button>
+                <button className="flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors">
+                  <Instagram className="w-4 h-4" />
+                  Instagram
                 </button>
               </div>
             </div>
