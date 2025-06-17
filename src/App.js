@@ -52,96 +52,122 @@ const Portfolio = () => {
 
       case 'tentang':
         return (
-          <section className="min-h-screen flex flex-col gap-24 px-4 py-20">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-white to-blue-300 bg-clip-text">
-                Resume
-              </h2>
+    <section className="min-h-screen bg-gray-900 text-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        
+        {/* Header */}
+        <div className="text-center mb-16 sm:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
+            Resume
+          </h2>
+        </div>
 
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                {/* Gambar pindah ke kiri */}
-                <div className="relative">
-                  <div className="w-80 h-80 mx-auto rounded-2xl bg-gradient-to-br from-blue-900/50 to-blue-700/30 flex items-center justify-center backdrop-blur-sm border border-blue-700/30 shadow-2xl">
-                    <User className="w-32 h-32 text-blue-200" />
+        {/* Profile Description */}
+        <div className="max-w-4xl mx-auto mb-16 sm:mb-20">
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/50">
+            <div className="space-y-6">
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed text-justify">
+                Lulusan Universitas Muhammadiyah Cirebon, jurusan Teknik Informatika. Menguasai dasar-dasar pemrograman, pengembangan web, dan pengelolaan basis data, serta memiliki kemampuan dalam menggunakan berbagai software pengembangan dan memiliki ketelitian, manajemen waktu, serta kemampuan riset yang baik. Saya terampil dalam mengoperasikan Microsoft Office (Word, Excel, dan Power Point). Dan mencari peluang kerja yang memberikan peluang dan pengalaman baru untuk berkembang.
+              </p>
+
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+                Keahlian dalam pengembangan web saya yang mencakup fullstack developer adalah:
+              </p>
+
+              <div className="flex flex-wrap gap-2 sm:gap-3 pt-2">
+                {['PHP', 'Laravel', 'MySQL', 'PostgreSQL', 'HTML', 'CSS', 'JavaScript'].map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-4 py-2 bg-blue-900/40 text-blue-300 rounded-lg text-sm font-medium border border-blue-700/50 hover:bg-blue-800/50 transition-all duration-200"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Education & Experience */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          
+          {/* Education */}
+          <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/30">
+            <h3 className="text-2xl sm:text-3xl font-bold text-blue-300 mb-8 text-center lg:text-left">
+              Pendidikan
+            </h3>
+            
+            <div className="space-y-8">
+              {/* SMA */}
+              <div className="relative">
+                <div className="flex gap-6">
+                  <div className="flex-shrink-0 w-20 sm:w-24">
+                    <div className="text-sm sm:text-base text-gray-400 font-medium">
+                      2017 - 2020
+                    </div>
                   </div>
-                  <div className="absolute inset-0 rounded-2xl bg-blue-500 opacity-10 blur-3xl"></div>
-                </div>
-
-                {/* Teks pindah ke kanan */}
-                <div className="space-y-6">
-                  <p className="text-gray-300 text-lg leading-relaxed text-justify">
-                    Lulusan Universitas Muhammadiyah Cirebon, jurusan Teknik Informatika. Menguasai dasar-dasar pemrograman, pengembangan web, dan pengelolaan basis data, serta memiliki kemampuan dalam menggunakan berbagai software pengembangan dan memiliki ketelitian, manajemen waktu, serta kemampuan riset yang baik. Saya terampil dalam mengoperasikan Microsoft Office (Word, Excel, dan Power Point). Dan mencari peluang kerja yang memberikan peluang dan pengalaman baru untuk berkembang.
-                  </p>
-
-                  <p className="text-gray-300 text-lg leading-relaxed text-justify">
-                    Keahlian dalam pengembangan web saya yang mencakup fullstack developer adalah :
-                  </p>
-
-                  <div className="flex flex-wrap gap-3 mt-8">
-                    {['PHP', 'Laravel', 'Mysql', 'PostgreSQL', 'Html', 'CSS', 'JS'].map((skill) => (
-                      <span
-                        key={skill}
-                        className="px-4 py-2 bg-blue-900/30 text-blue-300 rounded-full text-sm border border-blue-700/50 hover:bg-blue-800/40 transition-colors"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                  <div className="flex-1 border-l-2 border-blue-700/50 pl-6">
+                    <h4 className="text-lg sm:text-xl font-semibold text-white mb-1">
+                      SMA Negeri 1 Plumbon
+                    </h4>
+                    <p className="text-blue-300 text-sm sm:text-base">
+                      MIPA
+                    </p>
                   </div>
                 </div>
               </div>
-
-              <div className="grid md:grid-cols-2 gap-16 mt-24 text-white">
-                {/* Education */}
-                <div>
-                  <h3 className="text-3xl font-bold text-blue-300 mb-8 text-center md:text-left">Pendidikan</h3>
-                  <div className="space-y-12">
-                    {/* SMA */}
-                    <div className="flex gap-6">
-                      <div className="relative">
-                        <div className="pl-4 border-l-2 border-blue-700 text-gray-400">
-                          <div>2017 - 2020</div>
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="text-2xl font-semibold">SMA Negeri 1 Plumbon</h4>
-                        <p className="text-blue-300">MIPA</p>
-                      </div>
-                    </div>
-                    {/* Universitas */}
-                    <div className="flex gap-6">
-                      <div className="relative">
-                        <div className="pl-4 border-l-2 border-blue-700 text-gray-400">
-                          <div>2020 - 2025</div>
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="text-2xl font-semibold">Universitas Muhammadiyah Cirebon</h4>
-                        <p className="text-blue-300">S1 Teknik Informatika</p>
-                      </div>
+              
+              {/* Universitas */}
+              <div className="relative">
+                <div className="flex gap-6">
+                  <div className="flex-shrink-0 w-20 sm:w-24">
+                    <div className="text-sm sm:text-base text-gray-400 font-medium">
+                      2020 - 2025
                     </div>
                   </div>
-                </div>
-                {/* Experience */}
-                <div>
-                  <h3 className="text-3xl font-bold text-blue-300 mb-8 text-center md:text-left">Pengalaman</h3>
-                  <div className="space-y-12">
-                    {/* Magang */}
-                    <div className="flex gap-6">
-                      <div className="relative">
-                        <div className="pl-4 border-l-2 border-blue-700 text-gray-400">
-                          <div>2023</div>
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="text-2xl font-semibold">Dinas Kearsipan & Perpustakaan</h4>
-                        <p className="text-blue-300">Magang</p>
-                      </div>
-                    </div>
+                  <div className="flex-1 border-l-2 border-blue-700/50 pl-6">
+                    <h4 className="text-lg sm:text-xl font-semibold text-white mb-1">
+                      Universitas Muhammadiyah Cirebon
+                    </h4>
+                    <p className="text-blue-300 text-sm sm:text-base">
+                      S1 Teknik Informatika
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+
+          {/* Experience */}
+          <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-700/30">
+            <h3 className="text-2xl sm:text-3xl font-bold text-blue-300 mb-8 text-center lg:text-left">
+              Pengalaman
+            </h3>
+            
+            <div className="space-y-8">
+              {/* Magang */}
+              <div className="relative">
+                <div className="flex gap-6">
+                  <div className="flex-shrink-0 w-20 sm:w-24">
+                    <div className="text-sm sm:text-base text-gray-400 font-medium">
+                      2023
+                    </div>
+                  </div>
+                  <div className="flex-1 border-l-2 border-blue-700/50 pl-6">
+                    <h4 className="text-lg sm:text-xl font-semibold text-white mb-1">
+                      Dinas Kearsipan & Perpustakaan
+                    </h4>
+                    <p className="text-blue-300 text-sm sm:text-base">
+                      Magang
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
         );
 
       case 'project':
