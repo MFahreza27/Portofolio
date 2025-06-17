@@ -7,7 +7,7 @@ const Portfolio = () => {
 
   const navItems = [
     { id: 'beranda', label: 'Beranda', icon: Home },
-    { id: 'tentang', label: 'Tentang Saya', icon: User },
+    { id: 'tentang', label: 'Resume', icon: User },
     { id: 'project', label: 'Project', icon: FolderOpen },
     { id: 'kontak', label: 'Kontak', icon: Mail }
   ];
@@ -56,7 +56,7 @@ const Portfolio = () => {
           <section className="min-h-screen flex flex-col gap-24 px-4 py-20">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-white to-blue-300 bg-clip-text">
-                Tentang Saya
+                Resume
               </h2>
 
               <div className="grid md:grid-cols-2 gap-12 items-center">
