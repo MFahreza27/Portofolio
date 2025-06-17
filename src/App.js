@@ -197,7 +197,7 @@ const Portfolio = () => {
               Sales Page
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              Dibangun menggunakan Html, CSS, JS.
+              Dibangun menggunakan Html, CSS, JS serta TailwindCss.
             </p>
             <div className="flex flex-wrap gap-2">
               {['Html', 'CSS', 'JS'].map((tech) => (
