@@ -45,15 +45,15 @@ const Portfolio = () => {
                 Full Stack Developer | Ui/Ux Designer
               </p>
             <div className="flex flex-wrap justify-center gap-3 mt-8">
-              <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors flex-1 basis-1/3">
+              <a href="https://www.linkedin.com/in/mochamad-fahreza/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors flex-1 basis-1/3">
                 <Linkedin className="w-4 h-4" />
                 Linkedin
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors flex-1 basis-1/3">
+              <a href="https://github.com/MFahreza27" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors flex-1 basis-1/3">
                 <Github className="w-4 h-4" />
                 Github
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors flex-1 basis-1/3">
+              <a href="https://www.instagram.com/m.ffhrezaa_/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors flex-1 basis-1/3">
                 <Instagram className="w-4 h-4" />
                 Instagram
               </a>
@@ -313,17 +313,11 @@ const Portfolio = () => {
           <section className="min-h-screen flex items-center px-4 py-20">
             <div className="max-w-4xl mx-auto w-full">
               <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-white to-blue-300 bg-clip-text ">
-                Hubungi Saya
+                Kontak
               </h2>
               
-              <div className="grid md:grid-cols-2 gap-12">
-                <div className="space-y-8">
-                  <div>
-                    <p className="text-gray-300 leading-relaxed">
-                      Saya selalu terbuka untuk project baru, ide kreatif, atau sekadar diskusi tentang teknologi.
-                    </p>
-                  </div>
-                  
+              <div className="flex flex-wrap justify-center">
+                <div className="space-y-8">    
                   <div className="space-y-4">
                     <div className="flex items-center gap-4 p-4 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:bg-gray-800/70 transition-colors">
                       <Mail className="w-6 h-6 text-blue-400" />
@@ -332,57 +326,13 @@ const Portfolio = () => {
                     
                     <div className="flex items-center gap-4 p-4 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:bg-gray-800/70 transition-colors">
                       <Linkedin className="w-6 h-6 text-blue-400" />
-                      <span className="text-gray-300">linkedin.com/in/#</span>
+                      <span className="text-gray-300">Nochamad Fahreza</span>
                     </div>
                     
                     <div className="flex items-center gap-4 p-4 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:bg-gray-800/70 transition-colors">
                       <Github className="w-6 h-6 text-blue-400" />
-                      <span className="text-gray-300">github.com/#</span>
+                      <span className="text-gray-300">MFahreza27</span>
                     </div>
-                  </div>
-                </div>
-                
-                <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700/50 backdrop-blur-sm">
-                  <div className="space-y-6">
-                    <div>
-                      <div className="block text-sm font-medium text-gray-300 mb-2">
-                        Nama
-                      </div>
-                      <input 
-                        type="text" 
-                        className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400"
-                        placeholder="Nama Anda"
-                      />
-                    </div>
-                    
-                    <div>
-                      <div className="block text-sm font-medium text-gray-300 mb-2">
-                        Email
-                      </div>
-                      <input 
-                        type="email" 
-                        className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400"
-                        placeholder="email@example.com"
-                      />
-                    </div>
-                    
-                    <div>
-                      <div className="block text-sm font-medium text-gray-300 mb-2">
-                        Pesan
-                      </div>
-                      <textarea 
-                        rows="4" 
-                        className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 resize-none"
-                        placeholder="Komentar"
-                      ></textarea>
-                    </div>
-                    
-                    <button 
-                      onClick={() => alert('Pesan berhasil dikirim!')}
-                      className="w-full px-6 py-3 bg-gradient-to-r from-blue-900 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-800 hover:to-blue-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
-                    >
-                      Kirim Pesan
-                    </button>
                   </div>
                 </div>
               </div>
@@ -417,7 +367,7 @@ const Portfolio = () => {
                 <Code className="w-5 h-5 text-blue-200" />
               </div>
               <span className="ml-3 text-xl font-bold bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
-                RinDev
+                Portfolio
               </span>
             </div>
             
