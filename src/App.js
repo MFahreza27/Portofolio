@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code, User, Home, FolderOpen, Instagram } from 'lucide-react';
 
 const Portfolio = () => {
@@ -11,6 +11,18 @@ const Portfolio = () => {
     { id: 'project', label: 'Project', icon: FolderOpen },
     { id: 'kontak', label: 'Kontak', icon: Mail }
   ];
+
+  const [showIntro, setShowIntro] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
+    useEffect(() => {
+      const fade = setTimeout(() => setFadeOut(true), 2000);
+      const done = setTimeout(() => setShowIntro(false), 3000);
+      return () => {
+        clearTimeout(fade);
+        clearTimeout(done);
+      };
+    }, []);
+
 
   const renderSection = () => {
     switch(activeSection) {
@@ -26,7 +38,7 @@ const Portfolio = () => {
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent">
-                Hello, Im Rin
+                Mochamad Fahreza
               </h1>
               
               <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
@@ -385,6 +397,17 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+      {showIntro && (
+        <div className="fixed inset-0 z-[999] bg-gray-950 flex items-center justify-center">
+          <h1
+            className={`text-gray-100 text-xl md:text-2xl font-unbounded tracking-wide opacity-0 
+              ${fadeOut ? 'animate-fadeOut' : 'animate-slideLeftFade'}
+            `}
+          >
+            Mochamad Fahreza <span className="text-blue-400">|</span> Portofolio
+          </h1>
+        </div>
+      )}
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-700/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -463,10 +486,10 @@ const Portfolio = () => {
       </nav>
 
       {/* Main Content */}
-      <main className="pt-16">
+      <main className={`pt-16 transition-opacity duration-1000 ${showIntro ? 'opacity-0' : 'opacity-100'}`}>
         {renderSection()}
       </main>
-
+      
       {/* Floating particles effect */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-500 rounded-full opacity-30 animate-pulse"></div>
