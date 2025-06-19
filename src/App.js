@@ -204,118 +204,126 @@ const Portfolio = () => {
 
       case 'project':
         return (
-          <section className="min-h-screen flex items-center px-4 py-20 pt-32">
-              <div className="text-center mb-16 sm:mb-20">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
-                PROJECTS
-              </h2>
+<section className="min-h-screen bg-gray-900 text-white pt-32">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
 
-              {/* Container grid project */}
-              <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                
-                {/* Card 1 */}
-                <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700/50 backdrop-blur-sm hover:bg-gray-800/70 transition-all duration-300 group">
-                  <div className="flex flex-col gap-8">
-                    <div className="aspect-video bg-gradient-to-br from-blue-900/50 to-blue-700/30 rounded-xl flex items-center justify-center border border-blue-700/30 group-hover:border-blue-500/50 transition-colors">
-                      <Code className="w-16 h-16 text-blue-200" />
-                    </div>
-                    <div className="space-y-4">
-                      <h3 className="text-2xl font-bold text-white group-hover:text-blue-200 transition-colors">
-                        Phyton PyQt5
-                      </h3>
-                      <p className="text-gray-300 leading-relaxed">
-                        Dibangun menggunakan Phyton dan PyQt5 dengan database PostgreSQL.
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {['Phyton', 'PyQt5', 'PostgresSQL'].map((tech) => (
-                          <span key={tech} className="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs border border-blue-700/50">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                      <div className="flex gap-4 pt-4">
-                        <button className="flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors">
-                          <Github className="w-4 h-4" />
-                          GitHub
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+    {/* Header */}
+    <div className="text-center mb-16 sm:mb-20">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
+        PROJECTS
+      </h2>
+    </div>
 
-                {/* Card 2 */}
-                <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700/50 backdrop-blur-sm hover:bg-gray-800/70 transition-all duration-300 group">
-                  <div className="flex flex-col gap-8">
-                    <div className="aspect-video bg-gradient-to-br from-blue-900/50 to-blue-700/30 rounded-xl flex items-center justify-center border border-blue-700/30 group-hover:border-blue-500/50 transition-colors">
-                      <Code className="w-16 h-16 text-blue-200" />
-                    </div>
-                    <div className="space-y-4">
-                      <h3 className="text-2xl font-bold text-white group-hover:text-blue-200 transition-colors">
-                        Sales Page
-                      </h3>
-                      <p className="text-gray-300 leading-relaxed">
-                        Dibangun menggunakan Html, CSS, JS serta TailwindCss.
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {['Html', 'CSS', 'JS'].map((tech) => (
-                          <span key={tech} className="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs border border-blue-700/50">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                      <div className="flex gap-4 pt-4">
-                        <button className="flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors">
-                          <Github className="w-4 h-4" />
-                          GitHub
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card 3 */}
-                <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700/50 backdrop-blur-sm hover:bg-gray-800/70 transition-all duration-300 group">
-                  <div className="flex flex-col gap-8">
-                    <div className="aspect-video bg-gradient-to-br from-blue-900/50 to-blue-700/30 rounded-xl flex items-center justify-center border border-blue-700/30 group-hover:border-blue-500/50 transition-colors">
-                      <Code className="w-16 h-16 text-blue-200" />
-                    </div>
-                    <div className="space-y-4">
-                      <h3 className="text-2xl font-bold text-white group-hover:text-blue-200 transition-colors">
-                        Sistem Pakar
-                      </h3>
-                      <p className="text-gray-300 leading-relaxed">
-                        Dibangun menggunakan Laravel, PHP, CSS, JS dengan database MySql.
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {['Laravel', 'PHP', 'CSS', 'JS', 'MySql'].map((tech) => (
-                          <span key={tech} className="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs border border-blue-700/50">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                      <div className="flex gap-4 pt-4">
-                        <button className="flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors">
-                          <Github className="w-4 h-4" />
-                          GitHub
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
+    {/* Grid Project Cards */}
+    <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      
+      {/* Card 1: Python PyQt5 */}
+      <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700/50 backdrop-blur-sm hover:bg-gray-800/70 transition-all duration-300 group">
+        <div className="flex flex-col gap-6">
+          <div className="aspect-video bg-gradient-to-br from-blue-900/50 to-blue-700/30 rounded-xl flex items-center justify-center border border-blue-700/30 group-hover:border-blue-500/50 transition-colors">
+            <Code className="w-16 h-16 text-blue-200" />
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold text-white group-hover:text-blue-200 transition-colors">
+              Python PyQt5
+            </h3>
+            <p className="text-gray-300 leading-relaxed">
+              Dibangun menggunakan Python dan PyQt5 dengan database PostgreSQL.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {['Python', 'PyQt5', 'PostgreSQL'].map((tech) => (
+                <span key={tech} className="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs border border-blue-700/50">
+                  {tech}
+                </span>
+              ))}
             </div>
-          </section>
+            <div className="flex gap-4 pt-4">
+              <button className="flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors">
+                <Github className="w-4 h-4" />
+                GitHub
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Card 2: Sales Page */}
+      <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700/50 backdrop-blur-sm hover:bg-gray-800/70 transition-all duration-300 group">
+        <div className="flex flex-col gap-6">
+          <div className="aspect-video bg-gradient-to-br from-blue-900/50 to-blue-700/30 rounded-xl flex items-center justify-center border border-blue-700/30 group-hover:border-blue-500/50 transition-colors">
+            <Code className="w-16 h-16 text-blue-200" />
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold text-white group-hover:text-blue-200 transition-colors">
+              Sales Page
+            </h3>
+            <p className="text-gray-300 leading-relaxed">
+              Dibangun menggunakan HTML, CSS, JS serta Tailwind CSS.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {['HTML', 'CSS', 'JavaScript', 'TailwindCSS'].map((tech) => (
+                <span key={tech} className="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs border border-blue-700/50">
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <div className="flex gap-4 pt-4">
+              <button className="flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors">
+                <Github className="w-4 h-4" />
+                GitHub
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Card 3: Sistem Pakar */}
+      <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700/50 backdrop-blur-sm hover:bg-gray-800/70 transition-all duration-300 group">
+        <div className="flex flex-col gap-6">
+          <div className="aspect-video bg-gradient-to-br from-blue-900/50 to-blue-700/30 rounded-xl flex items-center justify-center border border-blue-700/30 group-hover:border-blue-500/50 transition-colors">
+            <Code className="w-16 h-16 text-blue-200" />
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold text-white group-hover:text-blue-200 transition-colors">
+              Sistem Pakar
+            </h3>
+            <p className="text-gray-300 leading-relaxed">
+              Dibangun menggunakan Laravel, PHP, CSS, JS dengan database MySQL.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {['Laravel', 'PHP', 'CSS', 'JavaScript', 'MySQL'].map((tech) => (
+                <span key={tech} className="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-xs border border-blue-700/50">
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <div className="flex gap-4 pt-4">
+              <button className="flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors">
+                <Github className="w-4 h-4" />
+                GitHub
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
         );
 
       case 'kontak':
         return (
-          <section className="min-h-screen flex items-center px-4 py-20 pt-32">
-              <div className="text-center mb-16 sm:mb-20">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
-                KONTAK
-              </h2>
+          <section className="min-h-screen bg-gray-900 text-white pt-32">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
               
+              {/* Header */}
+              <div className="text-center mb-16 sm:mb-20">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
+                  KONTAK
+                </h2>
+              </div>
               <div className="flex flex-wrap justify-center">
                 <div className="space-y-8">    
                   <div className="space-y-4">
