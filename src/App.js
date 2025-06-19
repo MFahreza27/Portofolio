@@ -205,8 +205,8 @@ const Portfolio = () => {
       case 'project':
         return (
           <section className="min-h-screen flex items-center px-4 py-20 pt-32">
-            <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
+              <div className="text-center mb-16 sm:mb-20">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
                 PROJECTS
               </h2>
 
@@ -311,8 +311,8 @@ const Portfolio = () => {
       case 'kontak':
         return (
           <section className="min-h-screen flex items-center px-4 py-20 pt-32">
-            <div className="max-w-4xl mx-auto w-full">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
+              <div className="text-center mb-16 sm:mb-20">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
                 KONTAK
               </h2>
               
