@@ -70,7 +70,7 @@ const Portfolio = () => {
         {/* Header */}
         <div className="text-center mb-16 sm:mb-20">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
-            Resume
+            RESUME
           </h2>
         </div>
 
@@ -206,8 +206,8 @@ const Portfolio = () => {
         return (
           <section className="min-h-screen flex items-center px-4 py-20 pt-32">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-white to-blue-300 bg-clip-text">
-                Project
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
+                PROJECTS
               </h2>
 
               {/* Container grid project */}
@@ -312,8 +312,8 @@ const Portfolio = () => {
         return (
           <section className="min-h-screen flex items-center px-4 py-20 pt-32">
             <div className="max-w-4xl mx-auto w-full">
-              <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-white to-blue-300 bg-clip-text ">
-                Kontak
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
+                KONTAK
               </h2>
               
               <div className="flex flex-wrap justify-center">
@@ -326,7 +326,7 @@ const Portfolio = () => {
                     
                     <div className="flex items-center gap-4 p-4 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:bg-gray-800/70 transition-colors">
                       <Linkedin className="w-6 h-6 text-blue-400" />
-                      <span className="text-gray-300">Nochamad Fahreza</span>
+                      <span className="text-gray-300">Mochamad Fahreza</span>
                     </div>
                     
                     <div className="flex items-center gap-4 p-4 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:bg-gray-800/70 transition-colors">
