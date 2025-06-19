@@ -28,7 +28,7 @@ const Portfolio = () => {
     switch(activeSection) {
       case 'beranda':
         return (
-          <section className="min-h-screen flex items-center justify-center px-4">
+          <section className="min-h-screen flex items-center justify-center px-4 pt-32">
             <div className="text-center max-w-4xl mx-auto">
               <div className="mb-8 relative">
                 <div className="w-40 h-40 mx-auto rounded-full bg-gradient-to-r from-blue-900 to-blue-700 flex items-center justify-center mb-6 shadow-2xl">
@@ -64,7 +64,7 @@ const Portfolio = () => {
 
       case 'tentang':
         return (
-    <section className="min-h-screen bg-gray-900 text-white">
+    <section className="min-h-screen bg-gray-900 text-white pt-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         
         {/* Header */}
@@ -204,7 +204,7 @@ const Portfolio = () => {
 
       case 'project':
         return (
-          <section className="min-h-screen flex items-center px-4 py-20">
+          <section className="min-h-screen flex items-center px-4 py-20 pt-32">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-white to-blue-300 bg-clip-text">
                 Project
@@ -310,7 +310,7 @@ const Portfolio = () => {
 
       case 'kontak':
         return (
-          <section className="min-h-screen flex items-center px-4 py-20">
+          <section className="min-h-screen flex items-center px-4 py-20 pt-32">
             <div className="max-w-4xl mx-auto w-full">
               <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-white to-blue-300 bg-clip-text ">
                 Kontak
@@ -358,93 +358,55 @@ const Portfolio = () => {
           </h1>
         </div>
       )}
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-700/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-900 to-blue-700 rounded-lg flex items-center justify-center">
-                <Code className="w-5 h-5 text-blue-200" />
-              </div>
-              <span className="ml-3 text-xl font-bold bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
-                Portfolio
-              </span>
-            </div>
-            
-            {/* Desktop Navigation */}
-            <div className="hidden md:block">
-              <div className="flex items-center space-x-4">
-                {navItems.map((item) => {
-                  const IconComponent = item.icon;
-                  return (
-                    <button
-                      key={item.id}
-                      onClick={() => setActiveSection(item.id)}
-                      className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 ${
-                        activeSection === item.id
-                          ? 'bg-blue-900/50 text-blue-300 border border-blue-700/50'
-                          : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
-                      }`}
-                    >
-                      <IconComponent className="w-4 h-4" />
-                      {item.label}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-300 hover:text-white p-2"
-              >
-                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-700/50">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => {
+      {/* Modern Centered Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50">
+        <div className="flex justify-center pt-6">
+          {/* Navigation Menu - Always Visible */}
+          <div className="flex items-center">
+            <div className="flex items-center space-x-1">
+              {navItems.map((item, index) => {
                 const IconComponent = item.icon;
                 return (
                   <button
                     key={item.id}
-                    onClick={() => {
-                      setActiveSection(item.id);
-                      setIsMenuOpen(false);
-                    }}
-                    className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg transition-all duration-300 ${
+                    onClick={() => setActiveSection(item.id)}
+                    className={`relative flex items-center justify-center gap-2 px-4 md:px-6 py-3 rounded-full transition-all duration-500 group ${
                       activeSection === item.id
-                        ? 'bg-blue-900/50 text-blue-300 border border-blue-700/50'
+                        ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg shadow-blue-500/25'
                         : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
                     }`}
                   >
-                    <IconComponent className="w-5 h-5" />
-                    {item.label}
+                    {/* Mobile: Show only icon */}
+                    <IconComponent className={`w-4 h-4 md:w-4 md:h-4 transition-all duration-300 ${
+                      activeSection === item.id ? 'scale-110' : 'group-hover:scale-105'
+                    }`} />
+                    
+                    {/* Desktop: Show icon + text */}
+                    <span className="font-medium text-sm hidden md:block">{item.label}</span>
+                    
+                    {activeSection === item.id && (
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 opacity-20 blur-xl"></div>
+                    )}
                   </button>
                 );
               })}
             </div>
           </div>
-        )}
+        </div>
       </nav>
 
       {/* Main Content */}
-      <main className={`pt-16 transition-opacity duration-1000 ${showIntro ? 'opacity-0' : 'opacity-100'}`}>
+      <main className={`transition-opacity duration-1000 ${showIntro ? 'opacity-0' : 'opacity-100'}`}>
         {renderSection()}
       </main>
       
-      {/* Floating particles effect */}
+      {/* Enhanced floating particles effect */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-500 rounded-full opacity-30 animate-pulse"></div>
         <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-blue-400 rounded-full opacity-40 animate-pulse" style={{animationDelay: '1s'}}></div>
         <div className="absolute top-1/2 left-3/4 w-1.5 h-1.5 bg-blue-300 rounded-full opacity-20 animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-blue-600 rounded-full opacity-25 animate-pulse" style={{animationDelay: '3s'}}></div>
+        <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-blue-400 rounded-full opacity-35 animate-pulse" style={{animationDelay: '0.5s'}}></div>
       </div>
     </div>
   );
