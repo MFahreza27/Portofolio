@@ -13,15 +13,15 @@ export default function ContactSection() {
     {
       icon: Mail,
       label: "Email",
-      value: "mochamadfahreza27@gmail.com",
-      href: "mailto:mochamadfahreza27@gmail.com",
+      value: "fahrezamochamad@gmail.com",
+      href: "fahrezamochamad@gmail.com",
       color: "bg-blue-600"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+62 812-3456-7890",
-      href: "tel:+6281234567890",
+      value: "-",
+      href: "",
       color: "bg-green-600"
     },
     {
