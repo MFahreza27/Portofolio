@@ -113,34 +113,6 @@ export default function ContactSection() {
                 );
               })}
             </div>
-
-            {/* Social Links */}
-            <div>
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                Follow Me
-              </h4>
-              <div className="flex gap-4">
-                {socialLinks.map((social, index) => {
-                  const IconComponent = social.icon;
-                  return (
-                    <motion.a
-                      key={index}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`flex items-center justify-center w-12 h-12 ${social.color} text-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300`}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={inView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                    >
-                      <IconComponent className="w-5 h-5" />
-                    </motion.a>
-                  );
-                })}
-              </div>
-            </div>
           </motion.div>
 
           {/* Contact Form */}
@@ -209,7 +181,7 @@ export default function ContactSection() {
               </div>
               
               <motion.button
-                type="submit"
+                type="submi"
                 className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

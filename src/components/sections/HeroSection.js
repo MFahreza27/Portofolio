@@ -75,7 +75,6 @@ export default function HeroSection() {
           Full Stack Developer | UI/UX Designer
         </motion.p>
 
-        {/* Description */}
 
         {/* Social Links */}
         <motion.div
@@ -111,14 +110,6 @@ export default function HeroSection() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
         >
-          <motion.button
-            className="inline-flex items-center gap-3 px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Download className="w-4 h-4" />
-            Download Resume
-          </motion.button>
         </motion.div>
       </div>
     </section>
