@@ -76,14 +76,6 @@ export default function HeroSection() {
         </motion.p>
 
         {/* Description */}
-        <motion.p
-          className="text-base text-gray-500 dark:text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed transition-colors duration-500"
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-        >
-          Passionate developer creating innovative digital experiences with modern technologies and clean design principles.
-        </motion.p>
 
         {/* Social Links */}
         <motion.div
