@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import { Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ onClick }) {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <motion.button
-      onClick={toggleTheme}
+      onClick={onClick || toggleTheme}
       className="fixed top-6 right-6 z-50 w-12 h-12 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-700"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}

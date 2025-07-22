@@ -11,9 +11,26 @@ import ContactSection from './components/sections/ContactSection';
 
 const PortfolioContent = () => {
   const [activeSection, setActiveSection] = useState('beranda');
-  const { isDark } = useTheme();
+  const { isDark, toggleTheme } = useTheme();
   const [showIntro, setShowIntro] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
+  const [showNav, setShowNav] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isFading, setIsFading] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setShowNav(false); // Scroll down, hide nav
+      } else {
+        setShowNav(true); // Scroll up, show nav
+      }
+      setLastScrollY(currentScrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
     useEffect(() => {
       const fade = setTimeout(() => setFadeOut(true), 2000);
@@ -39,12 +56,25 @@ const PortfolioContent = () => {
     }
   };
 
+  // Handler untuk ThemeToggle agar bisa animasi fade
+  const handleThemeToggle = () => {
+    setIsFading(true);
+    setTimeout(() => {
+      toggleTheme();
+      setIsFading(false);
+    }, 400); // durasi fade out
+  };
+
   return (
-    <div className={`min-h-screen transition-colors duration-500 ${
-      isDark 
-        ? 'bg-white dark:bg-gray-900' 
-        : 'bg-white dark:bg-gray-900'
-    }`}>
+    <motion.div
+      className={`min-h-screen transition-colors duration-500 ${
+        isDark 
+          ? 'bg-white dark:bg-gray-900' 
+          : 'bg-white dark:bg-gray-900'
+      }`}
+      animate={{ opacity: isFading ? 0 : 1 }}
+      transition={{ duration: 0.4 }}
+    >
       
       {/* Intro Animation */}
       <AnimatePresence>
@@ -73,10 +103,10 @@ const PortfolioContent = () => {
       <ThreeBackground />
 
       {/* Theme Toggle */}
-      <ThemeToggle />
+      <ThemeToggle onClick={handleThemeToggle} />
 
       {/* Navigation */}
-      <AnimatedNav activeSection={activeSection} setActiveSection={setActiveSection} />
+      <AnimatedNav activeSection={activeSection} setActiveSection={setActiveSection} showNav={showNav} />
 
       {/* Main Content */}
       <motion.main 
@@ -152,7 +182,7 @@ const PortfolioContent = () => {
           }}
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

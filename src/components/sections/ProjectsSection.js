@@ -11,32 +11,13 @@ export default function ProjectsSection() {
 
   const projects = [
     {
-      title: "Sistem Informasi Akademik",
-      description: "Aplikasi web untuk mengelola data akademik mahasiswa, dosen, dan mata kuliah dengan fitur login, CRUD, dan laporan.",
-      technologies: ["PHP", "Laravel", "MySQL", "Bootstrap"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80",
-      github: "https://github.com/MFahreza27",
-      live: "https://github.com/MFahreza27",
+      title: "Business Catalog Website",
+      description: "Website Static yang mengelola katalog penjualan produk",
+      technologies: ["PHP",  "MySQL", "Tailwind"],
+      image: "/Capture.PNG",
+      link: "https://yuuservices.infinityfreeapp.com/",
       category: "Web Development"
     },
-    {
-      title: "Aplikasi E-Commerce",
-      description: "Platform e-commerce dengan fitur keranjang belanja, pembayaran, dan manajemen produk.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      github: "https://github.com/MFahreza27",
-      live: "https://github.com/MFahreza27",
-      category: "Full Stack"
-    },
-    {
-      title: "Dashboard Analytics",
-      description: "Dashboard interaktif untuk visualisasi data dengan grafik dan laporan real-time.",
-      technologies: ["Vue.js", "D3.js", "Express.js", "PostgreSQL"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      github: "https://github.com/MFahreza27",
-      live: "https://github.com/MFahreza27",
-      category: "Data Visualization"
-    }
   ];
 
   const categories = ["All", "Web Development", "Full Stack", "Data Visualization"];
@@ -113,22 +94,13 @@ export default function ProjectsSection() {
                   {/* Links */}
                   <div className="flex gap-3">
                     <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-medium rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors duration-300"
-                    >
-                      <Github className="w-4 h-4" />
-                      Code
-                    </a>
-                    <a
-                      href={project.live}
+                      href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300"
                     >
                       <ExternalLink className="w-4 h-4" />
-                      Live
+                      Link
                     </a>
                   </div>
                 </div>

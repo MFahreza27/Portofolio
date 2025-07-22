@@ -10,15 +10,17 @@ const navItems = [
   { id: 'kontak', label: 'Kontak', icon: Mail }
 ];
 
-export default function AnimatedNav({ activeSection, setActiveSection }) {
+export default function AnimatedNav({ activeSection, setActiveSection, showNav }) {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40">
+    <motion.nav
+      className="fixed top-0 left-0 right-0 z-40"
+      initial={{ opacity: 1, y: 0 }}
+      animate={showNav ? { opacity: 1, y: 0 } : { opacity: 0, y: -40 }}
+      transition={{ duration: 0.4 }}
+    >
       <div className="flex justify-center pt-6">
-        <motion.div 
+        <div 
           className="flex items-center bg-white/10 dark:bg-gray-800/20 backdrop-blur-md rounded-full p-2 border border-white/20 dark:border-gray-700/50 shadow-lg"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
         >
           <div className="flex items-center space-x-1">
             {navItems.map((item, index) => {
@@ -64,8 +66,8 @@ export default function AnimatedNav({ activeSection, setActiveSection }) {
               );
             })}
           </div>
-        </motion.div>
+        </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 } 
