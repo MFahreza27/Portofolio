@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { GraduationCap, Briefcase, Code, Database, Wrench, Users } from 'lucide-react';
+import CertificatesSection from "./CertificatesSection";
 
 export default function ResumeSection() {
   const [ref, inView] = useInView({
@@ -246,6 +247,8 @@ export default function ResumeSection() {
               })}
             </div>
           </motion.div>
+          {/* Certificates Section */}
+          <CertificatesSection />
         </div>
       </div>
     </section>
