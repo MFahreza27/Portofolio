@@ -1,35 +1,39 @@
-import React, { useState } from "react";
-import Masonry from "react-masonry-css";
+import React, { useEffect, useRef, useState } from "react";
 
-// Tambahkan nama file sertifikat baru ke array ini, layout akan otomatis menyesuaikan
 const certificateImages = [
   "/Sertif1.PNG",
   "/Sertif2.PNG",
-  // Contoh: "/sertif2.png", "/sertif3.jpg", dst.
+  // Tambahkan gambar lain di sini
 ];
 
-const breakpointColumnsObj = {
-  default: 3,
-  1100: 2,
-  700: 1,
-};
-
 const CertificatesSection = () => {
+  const gridRef = useRef(null);
   const [zoomImg, setZoomImg] = useState(null);
+
+  useEffect(() => {
+    if (window.Masonry && gridRef.current) {
+      // eslint-disable-next-line no-undef
+      new window.Masonry(gridRef.current, {
+        itemSelector: ".masonry-item",
+        columnWidth: ".masonry-sizer",
+        percentPosition: true,
+        gutter: 16,
+      });
+    }
+  }, [certificateImages.length]);
+
   const handleClose = () => setZoomImg(null);
 
   return (
     <section className="my-8">
       <h2 className="text-2xl font-bold mb-4">Sertifikat</h2>
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="my-masonry-grid"
-        columnClassName="my-masonry-grid_column"
-      >
+      <div ref={gridRef} className="masonry-grid" style={{ display: "flex", marginLeft: -16 }}>
+        <div className="masonry-sizer" style={{ width: "33.333%" }}></div>
         {certificateImages.map((src, idx) => (
           <div
             key={idx}
-            className="bg-white dark:bg-gray-800 rounded-lg shadow-md mb-6 overflow-hidden cursor-pointer transition-transform hover:scale-105"
+            className="masonry-item bg-white dark:bg-gray-800 rounded-lg shadow-md mb-6 overflow-hidden cursor-pointer transition-transform hover:scale-105"
+            style={{ marginLeft: 16, width: "33.333%" }}
             onClick={() => setZoomImg(src)}
           >
             <img
@@ -39,17 +43,14 @@ const CertificatesSection = () => {
             />
           </div>
         ))}
-      </Masonry>
+      </div>
       {/* Modal zoom */}
       {zoomImg && (
         <div
           className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
           onClick={handleClose}
         >
-          <div
-            className="relative"
-            onClick={e => e.stopPropagation()}
-          >
+          <div className="relative" onClick={e => e.stopPropagation()}>
             <button
               className="absolute -top-4 -right-4 bg-white text-black rounded-full shadow p-2 hover:bg-gray-200 focus:outline-none z-10"
               onClick={handleClose}
@@ -67,20 +68,6 @@ const CertificatesSection = () => {
           </div>
         </div>
       )}
-      <style>{`
-        .my-masonry-grid {
-          display: flex;
-          margin-left: -16px;
-          width: auto;
-        }
-        .my-masonry-grid_column {
-          padding-left: 16px;
-          background-clip: padding-box;
-        }
-        .my-masonry-grid_column > div {
-          margin-bottom: 16px;
-        }
-      `}</style>
     </section>
   );
 };
