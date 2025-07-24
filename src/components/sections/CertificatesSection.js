@@ -27,13 +27,28 @@ const CertificatesSection = () => {
   return (
     <section className="my-8">
       <h2 className="text-2xl font-bold mb-4">Sertifikat</h2>
-      <div ref={gridRef} className="masonry-grid" style={{ display: "flex", marginLeft: -16 }}>
-        <div className="masonry-sizer" style={{ width: "33.333%" }}></div>
+      <div
+        ref={gridRef}
+        className="masonry-grid"
+        style={{ display: "flex", flexDirection: "row-reverse", marginRight: -16 }}
+      >
+        <div
+          className="masonry-sizer"
+          style={{
+            width: "33.333%",
+            height: 0,
+            margin: 0,
+            padding: 0,
+            border: "none",
+            background: "transparent",
+            pointerEvents: "none"
+          }}
+        ></div>
         {certificateImages.map((src, idx) => (
           <div
             key={idx}
             className="masonry-item bg-white dark:bg-gray-800 rounded-lg shadow-md mb-6 overflow-hidden cursor-pointer transition-transform hover:scale-105"
-            style={{ marginLeft: 16, width: "33.333%" }}
+            style={{ marginRight: 16, width: "33.333%" }}
             onClick={() => setZoomImg(src)}
           >
             <img
