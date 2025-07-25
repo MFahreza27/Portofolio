@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram } from 'lucide-react';
-import emailjs from '@emailjs/browser';
+// EmailJS di-load dari CDN, inisialisasi di public/index.html
 
 export default function ContactSection() {
   const [ref, inView] = useInView({
@@ -25,11 +25,9 @@ export default function ContactSection() {
     setSuccess(null);
     setError(null);
     try {
-      // Ganti berikut dengan ID dari EmailJS dashboard Anda
       const SERVICE_ID = 'service_1v6vrcg';
       const TEMPLATE_ID = 'template_0u57xtl';
-      const PUBLIC_KEY = 'fZXwaaO6rqaVLlqmX';
-      await emailjs.send(
+      await window.emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
         {
@@ -37,8 +35,7 @@ export default function ContactSection() {
           from_email: form.email,
           subject: form.subject,
           message: form.message,
-        },
-        PUBLIC_KEY
+        }
       );
       setSuccess('Pesan berhasil dikirim!');
       setForm({ name: '', email: '', subject: '', message: '' });
