@@ -1,13 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 export default function ContactSection() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(null);
+  const [error, setError] = useState(null);
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(null);
+    setError(null);
+    try {
+      // Ganti berikut dengan ID dari EmailJS dashboard Anda
+      const SERVICE_ID = 'service_1v6vrcg';
+      const TEMPLATE_ID = 'template_0u57xtl';
+      const PUBLIC_KEY = 'fZXwaaO6rqaVLlqmX';
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          subject: form.subject,
+          message: form.message,
+        },
+        PUBLIC_KEY
+      );
+      setSuccess('Pesan berhasil dikirim!');
+      setForm({ name: '', email: '', subject: '', message: '' });
+    } catch (err) {
+      setError('Gagal mengirim pesan. Silakan coba lagi.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const contactInfo = [
     {
@@ -126,7 +166,7 @@ export default function ContactSection() {
               Send Message
             </h3>
             
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -136,8 +176,11 @@ export default function ContactSection() {
                     type="text"
                     id="name"
                     name="name"
+                    value={form.name}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white"
                     placeholder="Your name"
+                    required
                   />
                 </div>
                 <div>
@@ -148,12 +191,14 @@ export default function ContactSection() {
                     type="email"
                     id="email"
                     name="email"
+                    value={form.email}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white"
                     placeholder="your@email.com"
+                    required
                   />
                 </div>
               </div>
-              
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Subject
@@ -162,11 +207,13 @@ export default function ContactSection() {
                   type="text"
                   id="subject"
                   name="subject"
+                  value={form.subject}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white"
                   placeholder="Subject"
+                  required
                 />
               </div>
-              
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Message
@@ -175,19 +222,24 @@ export default function ContactSection() {
                   id="message"
                   name="message"
                   rows="6"
+                  value={form.message}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white resize-none"
                   placeholder="Your message..."
+                  required
                 ></textarea>
               </div>
-              
+              {success && <p className="text-green-600 dark:text-green-400">{success}</p>}
+              {error && <p className="text-red-600 dark:text-red-400">{error}</p>}
               <motion.button
-                type="submi"
-                className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
+                type="submit"
+                className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium rounded-lg shadow-sm hover:shadow-md transition-all duration-300 disabled:opacity-60"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                disabled={loading}
               >
                 <Send className="w-4 h-4" />
-                Send Message
+                {loading ? 'Mengirim...' : 'Send Message'}
               </motion.button>
             </form>
           </motion.div>
