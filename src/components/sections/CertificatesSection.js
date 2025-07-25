@@ -62,10 +62,10 @@ const CertificatesSection = () => {
       {/* Modal zoom */}
       {zoomImg && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4 sm:p-8"
           onClick={handleClose}
         >
-          <div className="relative" onClick={e => e.stopPropagation()}>
+          <div className="relative max-w-full max-h-full flex items-center justify-center" style={{padding: '2vw'}} onClick={e => e.stopPropagation()}>
             <button
               className="absolute -top-4 -right-4 bg-white text-black rounded-full shadow p-2 hover:bg-gray-200 focus:outline-none z-10"
               onClick={handleClose}
@@ -78,7 +78,8 @@ const CertificatesSection = () => {
             <img
               src={process.env.PUBLIC_URL + zoomImg}
               alt="Zoom Sertifikat"
-              className="max-w-full max-h-[80vh] rounded-lg shadow-lg"
+              className="max-w-[90vw] max-h-[70vh] sm:max-w-[70vw] sm:max-h-[80vh] rounded-lg shadow-lg border-4 border-white dark:border-gray-800"
+              style={{objectFit: 'contain', background: 'white'}}
             />
           </div>
         </div>
