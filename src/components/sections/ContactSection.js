@@ -24,6 +24,11 @@ export default function ContactSection() {
     setLoading(true);
     setSuccess(null);
     setError(null);
+    if (!window.emailjs) {
+      setError('EmailJS tidak tersedia. Coba refresh halaman atau hubungi admin.');
+      setLoading(false);
+      return;
+    }
     try {
       const SERVICE_ID = 'service_1v6vrcg';
       const TEMPLATE_ID = 'template_0u57xtl';
@@ -51,7 +56,7 @@ export default function ContactSection() {
       icon: Mail,
       label: "Email",
       value: "fahrezamochamad@gmail.com",
-      href: "fahrezamochamad@gmail.com",
+      href: "mailto:fahrezamochamad@gmail.com",
       color: "bg-blue-600"
     },
     {
