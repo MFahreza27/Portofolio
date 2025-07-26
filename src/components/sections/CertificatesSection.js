@@ -20,7 +20,7 @@ const CertificatesSection = () => {
         gutter: 16,
       });
     }
-  }, [certificateImages.length]);
+  }, []);
 
   const handleClose = () => setZoomImg(null);
 

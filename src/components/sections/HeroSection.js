@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Instagram, Code, Download } from 'lucide-react';
+import { Github, Linkedin, Instagram, Code } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
 export default function HeroSection() {

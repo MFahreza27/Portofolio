@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Github, Code, Database, Wrench } from 'lucide-react';
+import { ExternalLink, Code } from 'lucide-react';
 
 export default function ProjectsSection() {
   const [ref, inView] = useInView({
@@ -19,8 +19,6 @@ export default function ProjectsSection() {
       category: "Web Development"
     },
   ];
-
-  const categories = ["All", "Web Development", "Full Stack", "Data Visualization"];
 
   return (
     <section className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white pt-32">
